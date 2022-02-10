@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import ApartmentIndex from './pages/ApartmentIndex'
 import Contact from './pages/Contact'
 import mockApartment from './mockApartment'
+import ApartmentShow from './pages/ApartmentShow'
 
 
 class App extends Component {
@@ -34,23 +35,6 @@ class App extends Component {
       <>
       <Router>
         <Header />
-      
-
-      {/* <Nav>
-          <NavItem>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/apartmentindex">ApartmentIndex</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-            
-          </NavItem>   
-      </Nav> */}
-            <Switch>
-                <Route exact path="/" component={Home} />
-                {/* <Route path="/apartmentindex" component={ApartmentIndex} /> */}
-                <Route path="/apartmentindex" render={(props) => <ApartmentIndex apartments={this.state.apartments} />} />
-                <Route path="/contact" component={Contact} />
-            </Switch>
-       
               {logged_in &&
                 <div>
                   <a href={sign_out_route}>Sign Out</a>
@@ -61,6 +45,25 @@ class App extends Component {
                   <a href={sign_in_route}>Sign In</a>
                 </div>
               }
+      
+            <Switch>
+                <Route exact path="/" component={Home} />
+
+                <Route path="/apartmentindex" render={(props) => <ApartmentIndex apartments={this.state.apartments} />} />
+                
+                <Route
+                  path="/apartmentshow/:id"
+                  render={(props) => {
+                    let paramId = +props.match.params.id
+                    let apartment = this.state.apartments.find(apartment => apartment.id === paramId)
+                    return <ApartmentShow apartment={apartment} deleteCat={this.deleteCat} />}} 
+                  />
+
+                <Route path="/contact" component={Contact} />
+
+            </Switch>
+       
+              
           <Footer />
         </Router>
         

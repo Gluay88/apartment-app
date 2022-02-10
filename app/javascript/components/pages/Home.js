@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <>
       <h1>Home Page</h1>
-      <img src={apartment} alt="doors" width="500px"/>
+      <img src={apartment} alt="apartment" width="80%"/>
         
       </>
     )
