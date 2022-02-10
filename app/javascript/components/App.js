@@ -46,7 +46,8 @@ class App extends Component {
       </Nav>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/apartmentindex" component={ApartmentIndex} />
+                {/* <Route path="/apartmentindex" component={ApartmentIndex} /> */}
+                <Route path="/apartmentindex" render={(props) => <ApartmentIndex apartments={this.state.apartments} />} />
                 <Route path="/contact" component={Contact} />
             </Switch>
        

@@ -10,6 +10,14 @@ class ApartmentIndex extends Component {
         <h2>Apartment Index Section Here!</h2>
         
         <img src={interior} alt="interior aparment" width="500px" />
+        {this.props.apartments.map(apartment => {
+          return(
+            <NavLink to={`/apartmentshow/${apartment.id}`} key={apartment.id}>
+            <h4>{apartment.name}</h4>
+            <img src={apartment.image} width="200px"/>
+            </NavLink>
+          )
+        })}
         
       </>
     )
