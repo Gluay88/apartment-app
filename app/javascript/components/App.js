@@ -34,16 +34,16 @@ class App extends Component {
       <>
       <Router>
         <Header />
-      <h1>Gluay Apartment App</h1>
+      
 
-      <Nav>
+      {/* <Nav>
           <NavItem>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/apartmentindex">ApartmentIndex</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             
           </NavItem>   
-      </Nav>
+      </Nav> */}
             <Switch>
                 <Route exact path="/" component={Home} />
                 {/* <Route path="/apartmentindex" component={ApartmentIndex} /> */}

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { Nav, NavItem } from 'reactstrap'
+
+
 class Header extends Component {
   render() {
     const {
@@ -19,8 +22,24 @@ class Header extends Component {
 
     return (
       <div>
-        <h1>Header goes here!</h1>
+        <h1>Apartment Hunter App</h1>
+        
+        <Nav>
+          <NavItem>
+          <div className="nav-bar">
+            <NavLink to="/" className="nav-link">Home</NavLink>
+          </div>
+          <div className="nav-bar">
+            <NavLink to="/apartmentindex" className="nav-link">ApartmentIndex</NavLink>
+          </div>
+          <div className="nav-bar" className="nav-link">
+            <NavLink to="/contact">Contact</NavLink>
+          </div>
+            
+          </NavItem>   
+      </Nav>
       </div>
+      
       
       
     )
