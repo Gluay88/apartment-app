@@ -11,10 +11,16 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ApartmentIndex from './pages/ApartmentIndex'
 import Contact from './pages/Contact'
-
+import mockApartment from './mockApartment'
 
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      apartments : mockApartment
+    }
+  }
   
   render() {
     const {
