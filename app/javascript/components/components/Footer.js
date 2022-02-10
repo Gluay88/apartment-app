@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-          <h1>Footer Section</h1>
+          <h4>Copyright &copy; 2022 - Gluay</h4>
       </div>
     )
   }

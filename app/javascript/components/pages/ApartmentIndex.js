@@ -14,6 +14,9 @@ class ApartmentIndex extends Component {
           return(
             <NavLink to={`/apartmentshow/${apartment.id}`} key={apartment.id}>
             <h4>{apartment.name}</h4>
+            <p>{apartment.price}</p>
+            <p>{apartment.location}</p>
+            
             <img src={apartment.image} alt="apartment photo" width="200px"/>
             </NavLink>
           )
