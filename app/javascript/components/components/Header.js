@@ -23,7 +23,7 @@ class Header extends Component {
     return (
       <div>
         <h1>Apartment Hunter App</h1>
-        
+        {/* pass the props here.. */}
         <Nav>
           <NavItem>
           <div className="nav-bar">
