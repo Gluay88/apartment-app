@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import {
   BrowserRouter as  Router,
-  NavLink,
   Route,
   Switch
 } from 'react-router-dom'
-import { Nav, NavItem } from 'reactstrap'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -34,17 +32,8 @@ class App extends Component {
     return(
       <>
       <Router>
-        <Header />
-              {logged_in &&
-                <div>
-                  <a href={sign_out_route}>Sign Out</a>
-                </div>
-              }
-              {!logged_in &&
-                <div>
-                  <a href={sign_in_route}>Sign In</a>
-                </div>
-              }
+
+          <Header {...this.props} />    
       
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -62,9 +51,9 @@ class App extends Component {
                 <Route path="/contact" component={Contact} />
 
             </Switch>
-       
               
           <Footer />
+          
         </Router>
         
       </>
