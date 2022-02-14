@@ -39,9 +39,9 @@ handleSubmit = () => {
     return (
       <>
       <h2>Apartment Edit</h2>
-      <Form>
+      <Form style={{width:"50vw"}}>
             <FormGroup>
-                <Label for="name">Street</Label>
+                <Label for="street">Street</Label>
                 <Input
                 type="string"
                 name="street"
@@ -51,7 +51,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">City</Label>
+                <Label for="city">City</Label>
                 <Input
                 type="string"
                 name="city"
@@ -61,7 +61,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">State</Label>
+                <Label for="state">State</Label>
                 <Input
                 type="string"
                 name="state"
@@ -71,7 +71,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">Manage</Label>
+                <Label for="manager">Manage</Label>
                 <Input
                 type="string"
                 name="manager"
@@ -81,7 +81,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">Email</Label>
+                <Label for="email">Email</Label>
                 <Input
                 type="string"
                 name="email"
@@ -91,7 +91,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">Price</Label>
+                <Label for="price">Price</Label>
                 <Input
                 type="string"
                 name="price"
@@ -101,7 +101,7 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">Bedrooms</Label>
+                <Label for="bedrooms">Bedrooms</Label>
                 <Input
                 type="integer"
                 name="bedrooms"
@@ -111,12 +111,22 @@ handleSubmit = () => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="name">Bathrooms</Label>
+                <Label for="bathrooms">Bathrooms</Label>
                 <Input
                 type="integer"
                 name="bathrooms"
                 onChange={this.handleChange}
                 value={this.state.newApartment.bathrooms}
+                />
+            </FormGroup>
+
+            <FormGroup>
+                <Label for="pets">Pets</Label>
+                <Input
+                type="string"
+                name="pets"
+                onChange={this.handleChange}
+                value={this.state.newApartment.pets}
                 />
             </FormGroup>
             

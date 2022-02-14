@@ -45,6 +45,7 @@ class ApartmentShow extends Component {
             <p>Bedrooms: {apartment.bedrooms} </p>
             <p>Bathrooms: {apartment.bathrooms} </p>
             <p>Pets Allowed: {apartment.pets} </p>
+
             
         </div>
 

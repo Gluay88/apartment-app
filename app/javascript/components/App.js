@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-import {
-  BrowserRouter as  Router,
-  Route,
-  Switch
-} from 'react-router-dom'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -14,6 +9,11 @@ import ApartmentShow from './pages/ApartmentShow'
 import ApartmentNew from './pages/ApartmentNew'
 import ApartmentEdit from './pages/ApartmentEdit'
 import NotFound from './pages/NotFound'
+import {
+  BrowserRouter as  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
 
 
 
@@ -86,9 +86,10 @@ class App extends Component {
     const { apartments } = this.state
     return(
       <>
+      
       <Router>
 
-          <Header {...this.props} />    
+      <Header {...this.props} />
       
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -126,32 +127,33 @@ class App extends Component {
 
 
                 {logged_in &&
-            <Route
-              path="/myapartments"
-              render={(props) => {
-                let myApartments = apartments.filter(apt => apt.user_id === current_user.id)
-                return <ApartmentProtectedIndex apartments={myApartments} />
-              }}
-            />
-          }
-          {logged_in &&
-            <Route
-              path="/apartmentnew"
-              render={(props) => {
-                return(
-                  <ApartmentNew
-                    current_user={current_user} createApartment={this.createApartment}
-                  />
-                )
-              }}
-            />
-          }
+                    <Route
+                      path="/myapartments"
+                      render={(props) => {
+                        let myApartments = apartments.filter(apt => apt.user_id === current_user.id)
+                        return <ApartmentProtectedIndex apartments={myApartments} />
+                      }}
+                    />
+                  }
+                  {logged_in &&
+                    <Route
+                      path="/apartmentnew"
+                      render={(props) => {
+                        return(
+                          <ApartmentNew
+                            current_user={current_user} createApartment={this.createApartment}
+                          />
+                        )
+                      }}
+                    />
+                }
                
             </Switch>
               
-          <Footer />
+         
           
         </Router>
+        <Footer />
         
       </>
     )
